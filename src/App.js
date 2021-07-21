@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css';
+import GitTable from './components/Table/Table';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className={style.app}>
+      <Row>
+        <Col>
+          <Alert>
+            <h3>Development Test</h3>
+            <h5>Mark Van Spall</h5>
+            <hr />
+          </Alert>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={{ span: 10, offset: 1 }} className={style.tableCol}>
+            <GitTable />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
